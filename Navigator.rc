@@ -1,0 +1,34 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 SpaceNavigator for Illustrator contributors
+#include <windows.h>
+
+1 VERSIONINFO
+ FILEVERSION 0,1,0,0
+ PRODUCTVERSION 0,1,0,0
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+ FILEFLAGS 0
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_DLL
+ FILESUBTYPE 0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "SpaceNavigator for Illustrator contributors\0"
+            VALUE "FileDescription", "SpaceNavigator pan and zoom plugin for Illustrator\0"
+            VALUE "FileVersion", "0.1.0\0"
+            VALUE "InternalName", "IllustratorNavigator\0"
+            VALUE "LegalCopyright", "Copyright (c) 2026 SpaceNavigator for Illustrator contributors\0"
+            VALUE "OriginalFilename", "IllustratorNavigator.aip\0"
+            VALUE "ProductName", "SpaceNavigator for Illustrator\0"
+            VALUE "ProductVersion", "0.1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END
+
+plugin pipl "plugin.pipl"

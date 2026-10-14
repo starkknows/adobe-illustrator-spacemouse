@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations"><ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration></ItemGroup>
+  <PropertyGroup Label="Globals"><ProjectGuid>{9EDB0B1D-4D2D-4F47-BBA1-8240E9522301}</ProjectGuid><WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion><SdkRoot>$(MSBuildThisFileDirectory)sdk\Adobe Illustrator 2026 SDK</SdkRoot></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration"><ConfigurationType>DynamicLibrary</ConfigurationType><PlatformToolset>v145</PlatformToolset><UseDebugLibraries>false</UseDebugLibraries></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup><OutDir>$(MSBuildThisFileDirectory)out\</OutDir><IntDir>$(MSBuildThisFileDirectory)build\</IntDir><TargetName>IllustratorNavigator</TargetName><TargetExt>.aip</TargetExt></PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SdkRoot)\samplecode\common\includes;$(SdkRoot)\illustratorapi\illustrator;$(SdkRoot)\illustratorapi\illustrator\actions;$(SdkRoot)\illustratorapi\illustrator\legacy;$(SdkRoot)\illustratorapi\pica_sp;$(SdkRoot)\illustratorapi\ate;$(SdkRoot)\illustratorapi\adm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN_ENV;_WINDOWS;NDEBUG;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>pragma.h;%(ForcedIncludeFiles)</ForcedIncludeFiles><LanguageStandard>stdcpp17</LanguageStandard><TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType><AdditionalOptions>/Zc:sizedDealloc- %(AdditionalOptions)</AdditionalOptions><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><StructMemberAlignment>8Bytes</StructMemberAlignment><ExceptionHandling>Sync</ExceptionHandling><WarningLevel>Level3</WarningLevel><PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ResourceCompile><AdditionalIncludeDirectories>$(ProjectDir);$(SdkRoot)\samplecode\common\win;$(SdkRoot)\samplecode\common\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ResourceCompile>
+    <Link><GenerateDebugInformation>false</GenerateDebugInformation><LinkIncremental>false</LinkIncremental><ModuleDefinitionFile>$(SdkRoot)\samplecode\common\win\PluginMain.def</ModuleDefinitionFile><SubSystem>Windows</SubSystem><AdditionalDependencies>User32.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="NavigatorPlugin.cpp" />
+    <ClCompile Include="$(SdkRoot)\samplecode\common\source\Main.cpp" />
+    <ClCompile Include="$(SdkRoot)\samplecode\common\source\Plugin.cpp" />
+    <ClCompile Include="$(SdkRoot)\samplecode\common\source\Suites.cpp" />
+    <ClCompile Include="$(SdkRoot)\samplecode\common\source\AppContext.cpp" />
+    <ClCompile Include="$(SdkRoot)\samplecode\common\source\IllustratorSDK.cpp" />
+    <ClCompile Include="$(SdkRoot)\illustratorapi\illustrator\IAIUnicodeString.cpp" />
+    <ResourceCompile Include="Navigator.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
+
+
+
+

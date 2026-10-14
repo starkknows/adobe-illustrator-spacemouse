@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations"><ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration></ItemGroup>
+  <PropertyGroup Label="Globals"><ProjectGuid>{9EDB0B1D-4D2D-4F47-BBA1-8240E9522301}</ProjectGuid><WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion><SdkRoot>$(MSBuildThisFileDirectory)sdk\Adobe Illustrator 2026 SDK</SdkRoot></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration"><ConfigurationType>Application</ConfigurationType><PlatformToolset>v145</PlatformToolset><UseDebugLibraries>false</UseDebugLibraries></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup><OutDir>$(MSBuildThisFileDirectory)out\</OutDir><IntDir>$(MSBuildThisFileDirectory)build\input\</IntDir><TargetName>NavigatorInputBridge</TargetName><TargetExt>.exe</TargetExt></PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      
+      <PreprocessorDefinitions>WIN_ENV;_WINDOWS;NDEBUG;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard><TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType><AdditionalOptions>/Zc:sizedDealloc- %(AdditionalOptions)</AdditionalOptions><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><StructMemberAlignment>8Bytes</StructMemberAlignment><ExceptionHandling>Sync</ExceptionHandling><WarningLevel>Level3</WarningLevel><PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    
+    <Link><GenerateDebugInformation>false</GenerateDebugInformation><LinkIncremental>false</LinkIncremental><SubSystem>Windows</SubSystem><AdditionalDependencies>User32.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup><ClCompile Include="InputBridge.cpp" /></ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
+
+
+

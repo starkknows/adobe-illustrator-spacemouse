@@ -1,0 +1,7 @@
+/build
+/sdk
+/out
+plugin.pipl
+*.user
+.vs/
+
